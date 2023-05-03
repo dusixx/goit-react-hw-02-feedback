@@ -7,7 +7,8 @@ import {
 } from 'react-icons/bs';
 
 const myTheme = {
-  colors: {
+  color: {
+    black: 'rgb(41, 41, 41)',
     feedback: {
       bad: '#ff884f',
       neutral: '#3699ff',
@@ -15,16 +16,20 @@ const myTheme = {
     },
   },
 
+  shaddow: {
+    box: '0 2px 5px 2px lightgray, 0 10px 10px -5px lightgray',
+  },
+
   icons: {
     feedback: {
       bad: styled(BsFillEmojiAngryFill)`
-        color: ${({ color, theme }) => color || theme.colors.feedback.bad};
+        color: ${({ color, theme }) => color || theme.color.feedback.bad};
       `,
       neutral: styled(BsFillEmojiNeutralFill)`
-        color: ${({ color, theme }) => color || theme.colors.feedback.neutral};
+        color: ${({ color, theme }) => color || theme.color.feedback.neutral};
       `,
       good: styled(BsFillEmojiSmileFill)`
-        color: ${({ color, theme }) => color || theme.colors.feedback.good};
+        color: ${({ color, theme }) => color || theme.color.feedback.good};
       `,
     },
   },

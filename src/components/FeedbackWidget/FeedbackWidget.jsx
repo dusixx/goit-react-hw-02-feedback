@@ -2,9 +2,10 @@ import { Component } from 'react';
 import PropTypes from 'prop-types';
 import ResetBtn from './ResetBtn';
 import FeedbackOptions from './FeedbackOptions';
-import { Container, Title, Notification } from './FeedbackWidget.styled';
+import { Section, Title, Notification } from './FeedbackWidget.styled';
 
 const MSG_NO_FEEDBACK = 'There is no feedback';
+const MSG_POSITIVE_FEEDBACK = <>Positive feedback:&nbsp;</>;
 
 //
 // FeedbackWidget
@@ -50,20 +51,21 @@ export default class FeedbackWidget extends Component {
     } = this;
 
     return (
-      <Container>
+      <Section>
         <ResetBtn size={18} onClick={handleFormReset} />
-        <Title>{title}</Title>
+        {title && <Title>{title}</Title>}
         <FeedbackOptions values={{ ...state }} onClick={handleFeedbackLeave} />
         <Stats value={countPositives()} />
-      </Container>
+      </Section>
     );
   }
 }
 
 function Stats({ value }) {
   return value ? (
-    <Notification>
-      Positive feedback:&nbsp;<b>{value}%</b>
+    <Notification color="#e0f4ff">
+      {MSG_POSITIVE_FEEDBACK}
+      <b>{value}%</b>
     </Notification>
   ) : (
     <Notification color="#ffe6d9">{MSG_NO_FEEDBACK}</Notification>
