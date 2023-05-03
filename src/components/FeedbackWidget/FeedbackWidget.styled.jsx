@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 
 export const Container = styled.div`
   position: relative;
@@ -23,7 +23,7 @@ export const Title = styled.h2`
   color: var(--color-black);
 `;
 
-export const Label = styled.div`
+export const Notification = styled.p`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,5 +33,5 @@ export const Label = styled.div`
   height: 20%;
 
   border-radius: 5px;
-  background-color: #e0f4ff;
+  background-color: ${({ color }) => color || '#e0f4ff'};
 `;
