@@ -36,6 +36,14 @@ export class FeedbackWidget extends Component {
 
   state = { ...this.defaultState };
 
+  countTotalFeedback = () =>
+    Object.values(this.state).reduce((sum, v) => sum + v, 0);
+
+  countPositiveFeedback = () => {
+    const res = (this.state.good / this.countTotalFeedback()) * 100;
+    return isNaN(res) ? null : res.toFixed(0);
+  };
+
   handleFeedbackLeave = e => {
     const { type } = e.currentTarget.dataset;
     this.setState(curState => ({ [type]: curState[type] + 1 }));
@@ -43,14 +51,6 @@ export class FeedbackWidget extends Component {
 
   handleFormReset = () => {
     this.setState({ ...this.defaultState });
-  };
-
-  countTotalFeedback = () =>
-    Object.values(this.state).reduce((sum, v) => sum + v, 0);
-
-  countPositiveFeedback = () => {
-    const res = (this.state.good / this.countTotalFeedback()) * 100;
-    return isNaN(res) ? null : res.toFixed(0);
   };
 
   render() {
