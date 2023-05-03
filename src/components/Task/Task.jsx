@@ -3,7 +3,7 @@ import { Container, Title } from './Task.styled';
 
 export const Task = ({ title, children }) => (
   <Container>
-    <Title>{title.replace('-', '—')}</Title>
+    <Title>{title && title.replace('-', '—')}</Title>
     {children}
   </Container>
 );

@@ -1,3 +1,4 @@
+import { FeedbackWidget } from 'components/FeedbackWidget/FeedbackWidget';
 import React from 'react';
 
 // components
@@ -6,6 +7,8 @@ import { Container } from './App.styled';
 
 export const App = () => (
   <Container>
-    <Task title=""></Task>
+    <Task title="01 - Feedback widget">
+      <FeedbackWidget title="Please leave feedback" />
+    </Task>
   </Container>
 );
