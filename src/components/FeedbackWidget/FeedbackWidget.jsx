@@ -30,8 +30,7 @@ export default class FeedbackWidget extends Component {
     return isNaN(res) ? null : res.toFixed(0);
   };
 
-  handleFeedbackLeave = e => {
-    const { type } = e.currentTarget.dataset;
+  handleFeedbackLeave = (_, type) => {
     this.setState(curState => ({ [type]: curState[type] + 1 }));
   };
 

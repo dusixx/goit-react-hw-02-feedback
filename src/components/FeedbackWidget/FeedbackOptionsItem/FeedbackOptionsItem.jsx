@@ -1,18 +1,6 @@
 import PropTypes from 'prop-types';
-
-import {
-  BsFillEmojiAngryFill as IconBad,
-  BsFillEmojiNeutralFill as IconNeutral,
-  BsFillEmojiSmileFill as IconGood,
-} from 'react-icons/bs';
-
 import { Option, Label, OptionButton } from './FeedbackOptionsItem.styled';
-
-const data = {
-  bad: { color: '#ff884f', Icon: IconBad },
-  neutral: { color: '#3699ff', Icon: IconNeutral },
-  good: { color: '#83b30e', Icon: IconGood },
-};
+import myTheme from 'styles/theme';
 
 export default function FeedbackOptionsItem({
   onClick,
@@ -20,12 +8,12 @@ export default function FeedbackOptionsItem({
   value = 0,
   iconSize = 40,
 }) {
-  const { Icon, color } = data[type];
+  const Icon = myTheme.icons.feedback[type];
 
   return (
     <Option>
-      <OptionButton onClick={onClick} title={type} data-type={type}>
-        <Icon size={iconSize} color={color} />
+      <OptionButton onClick={e => onClick(e, type)} title={type}>
+        <Icon size={iconSize} />
       </OptionButton>
       <Label>{value}</Label>
     </Option>
