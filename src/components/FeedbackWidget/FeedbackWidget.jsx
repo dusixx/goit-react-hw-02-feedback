@@ -51,7 +51,7 @@ export default class FeedbackWidget extends Component {
     } = this;
 
     return (
-      <Section {...props}>
+      <Section title={props.title}>
         <RefreshButton size={18} onClick={handleFormReset} />
         <FeedbackOptions values={{ ...state }} onClick={handleFeedbackLeave} />
         <Stats value={countPositives()} />
