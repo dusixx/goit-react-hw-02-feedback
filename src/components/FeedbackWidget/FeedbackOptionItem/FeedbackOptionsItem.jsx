@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+
 import {
   BsFillEmojiAngryFill as IconBad,
   BsFillEmojiNeutralFill as IconNeutral,
