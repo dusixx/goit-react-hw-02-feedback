@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Container, Title, OptionsList, Label } from './FeedbackWidget.styled';
-import { FeedbackOptionsItem } from './FeedbackOptionItem/FeedbackOptionsItem';
+import FeedbackOptionsItem from './FeedbackOptionsItem';
 
 const PositiveStats = ({ value }) =>
   value ? (
