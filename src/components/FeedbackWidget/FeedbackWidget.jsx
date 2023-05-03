@@ -23,7 +23,7 @@ const PositiveStats = ({ value }) =>
 // FeedbackWidget
 //
 
-export class FeedbackWidget extends Component {
+export default class FeedbackWidget extends Component {
   static propTypes = {
     title: PropTypes.string,
   };
