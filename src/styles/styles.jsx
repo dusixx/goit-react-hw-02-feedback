@@ -1,6 +1,6 @@
-import { Global, css, ThemeProvider } from '@emotion/react';
-import myTheme from './theme';
 import './index.css';
+import myTheme from './theme';
+import { Global, css, ThemeProvider } from '@emotion/react';
 
 const resetCSS = css`
   p,
@@ -34,11 +34,7 @@ const globalStyles = css`
 
 const allStyles = css(resetCSS, globalStyles);
 
-const ThemeProv = ({
-  theme = myTheme,
-  children,
-  GlobalStyles = globalStyles,
-}) => (
+const ThemeProv = ({ theme = myTheme, children }) => (
   <ThemeProvider theme={theme}>
     <Global styles={allStyles} />
     {children}
