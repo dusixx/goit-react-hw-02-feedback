@@ -8,7 +8,7 @@ export const Option = styled.div`
 `;
 
 export const OptionButton = styled.button`
-  transition: filter ease-out 250ms;
+  transition: ${({ theme }) => theme.transition('filter')};
 
   &:hover,
   &:focus-visible {

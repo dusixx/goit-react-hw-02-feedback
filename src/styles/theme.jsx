@@ -16,6 +16,10 @@ const myTheme = {
     },
   },
 
+  transition(...props) {
+    return props.map(prop => `${prop} ease 250ms`).join(',');
+  },
+
   shaddow: {
     box: '0 2px 5px 2px lightgray, 0 10px 10px -5px lightgray',
   },
