@@ -1,10 +1,10 @@
 import { BiRefresh } from 'react-icons/bi';
-import { Button } from './ResetBtn.styled';
+import { Button } from './RefreshButton.styled';
 
-const ResetBtn = ({ onClick, size }) => (
+const RefreshButton = ({ onClick, size }) => (
   <Button title="reset" onClick={onClick} size={size}>
     <BiRefresh size="100%" />
   </Button>
 );
 
-export default ResetBtn;
+export default RefreshButton;

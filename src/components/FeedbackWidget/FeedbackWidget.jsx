@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
-import ResetBtn from './ResetBtn';
+import RefreshButton from '../RefreshButton';
 import FeedbackOptions from './FeedbackOptions';
 import { Container, Title, Notification } from './FeedbackWidget.styled';
 
@@ -52,7 +52,7 @@ export default class FeedbackWidget extends Component {
 
     return (
       <Section {...props}>
-        <ResetBtn size={18} onClick={handleFormReset} />
+        <RefreshButton size={18} onClick={handleFormReset} />
         <FeedbackOptions values={{ ...state }} onClick={handleFeedbackLeave} />
         <Stats value={countPositives()} />
       </Section>
