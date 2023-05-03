@@ -8,12 +8,6 @@ export const Option = styled.div`
 `;
 
 export const OptionButton = styled.button`
-  display: block;
-  padding: 0;
-
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
   transition: filter ease-out 250ms;
 
   &:hover,

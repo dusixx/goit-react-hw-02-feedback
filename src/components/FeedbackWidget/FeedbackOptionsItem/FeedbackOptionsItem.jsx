@@ -14,13 +14,18 @@ const data = {
   good: { color: '#83b30e', Icon: IconGood },
 };
 
-export default function FeedbackOptionsItem({ onClick, type, value = 0 }) {
+export default function FeedbackOptionsItem({
+  onClick,
+  type,
+  value = 0,
+  iconSize = 40,
+}) {
   const { Icon, color } = data[type];
 
   return (
     <Option>
       <OptionButton onClick={onClick} title={type} data-type={type}>
-        <Icon size={40} color={color} />
+        <Icon size={iconSize} color={color} />
       </OptionButton>
       <Label>{value}</Label>
     </Option>
@@ -30,5 +35,6 @@ export default function FeedbackOptionsItem({ onClick, type, value = 0 }) {
 FeedbackOptionsItem.propTypes = {
   type: PropTypes.string.isRequired,
   value: PropTypes.number,
+  iconSize: PropTypes.number,
   onClick: PropTypes.func,
 };

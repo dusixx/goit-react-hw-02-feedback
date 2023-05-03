@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { BiRefresh } from 'react-icons/bi';
 
 export const Container = styled.div`
   position: relative;
@@ -17,34 +16,11 @@ export const Container = styled.div`
   border-radius: 7px;
 `;
 
-export const Reset = styled(BiRefresh)`
-  position: absolute;
-  top: 7px;
-  right: 7px;
-
-  color: #9c9c9c;
-  cursor: pointer;
-  transition: color ease 250ms, transform ease 250ms;
-
-  &:hover,
-  &:focus-visible {
-    color: gray;
-    transform: scale(1.1);
-  }
-`;
-
 export const Title = styled.h2`
   padding-top: 2px;
   margin-bottom: 25px;
   font-size: 20px;
   color: var(--color-black);
-`;
-
-export const OptionsList = styled.div`
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  width: 100%;
 `;
 
 export const Label = styled.div`
