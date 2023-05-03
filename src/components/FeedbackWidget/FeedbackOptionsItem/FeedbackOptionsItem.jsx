@@ -19,7 +19,7 @@ export default function FeedbackOptionsItem({ onClick, type, value = 0 }) {
 
   return (
     <Option>
-      <OptionButton onClick={onClick} data-type={type}>
+      <OptionButton onClick={onClick} title={type} data-type={type}>
         <Icon size={40} color={color} />
       </OptionButton>
       <Label>{value}</Label>
