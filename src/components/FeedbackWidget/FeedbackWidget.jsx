@@ -34,7 +34,7 @@ export default class FeedbackWidget extends Component {
   };
 
   handleFeedbackLeave = (_, type) => {
-    this.setState(curState => ({ [type]: curState[type] + 1 }));
+    this.setState({ [type]: this.state[type] + 1 });
   };
 
   handleFormReset = () => {
