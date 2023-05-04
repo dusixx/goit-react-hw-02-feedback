@@ -56,9 +56,7 @@ function FeedbackOptionsItem({ onClick, type, value = 0, iconSize = 40 }) {
 
 FeedbackOptionsItem.propTypes = {
   type: PropTypes.string.isRequired,
-  value: PropTypes.number,
-  iconSize: PropTypes.number,
-  onClick: PropTypes.func,
+  value: PropTypes.number.isRequired,
 };
 
 export default FeedbackOptions;
