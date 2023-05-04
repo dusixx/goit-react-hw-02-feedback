@@ -1,6 +1,16 @@
 import PropTypes from 'prop-types';
-import FeedbackOptionsItem from '../FeedbackOptionsItem';
-import { OptionsList } from './FeedbackOptions.styled';
+import myTheme from 'styles/theme';
+
+import {
+  OptionsList,
+  Option,
+  Label,
+  OptionButton,
+} from './FeedbackOptions.styled';
+
+//
+// FeedbackOptions
+//
 
 const FeedbackOptions = ({ values, onClick, iconSize }) => (
   <OptionsList>
@@ -25,6 +35,30 @@ FeedbackOptions.propTypes = {
     neutral: PropTypes.number.isRequired,
     good: PropTypes.number.isRequired,
   }),
+};
+
+//
+// FeedbackOptionsItem
+//
+
+function FeedbackOptionsItem({ onClick, type, value = 0, iconSize = 40 }) {
+  const Icon = myTheme.icons.feedback[type];
+
+  return (
+    <Option>
+      <OptionButton onClick={e => onClick(e, type)} title={type}>
+        <Icon size={iconSize} />
+      </OptionButton>
+      <Label>{value}</Label>
+    </Option>
+  );
+}
+
+FeedbackOptionsItem.propTypes = {
+  type: PropTypes.string.isRequired,
+  value: PropTypes.number,
+  iconSize: PropTypes.number,
+  onClick: PropTypes.func,
 };
 
 export default FeedbackOptions;
