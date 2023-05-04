@@ -15,7 +15,7 @@ export const Button = styled.button`
   height: ${({ size = DEF_SIZE }) => size}px;
 
   color: #9c9c9c;
-  transition: ${({ theme }) => theme.transition('color', 'transfrom')};
+  transition: ${({ theme }) => theme.transition('color', 'transform')};
 
   &:hover,
   &:focus-visible {
