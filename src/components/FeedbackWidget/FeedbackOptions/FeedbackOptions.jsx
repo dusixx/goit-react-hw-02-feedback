@@ -17,7 +17,9 @@ const FeedbackOptions = ({ values, onClick, iconSize }) => (
 );
 
 FeedbackOptions.propTypes = {
-  handleFeedbackLeave: PropTypes.func,
+  onClick: PropTypes.func,
+  iconSize: PropTypes.number,
+
   values: PropTypes.exact({
     bad: PropTypes.number.isRequired,
     neutral: PropTypes.number.isRequired,
