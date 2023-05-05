@@ -1,9 +1,9 @@
 import styled from '@emotion/styled';
 
 import {
-  BsFillEmojiAngryFill,
-  BsFillEmojiNeutralFill,
-  BsFillEmojiSmileFill,
+  BsFillEmojiAngryFill as SmileAngry,
+  BsFillEmojiNeutralFill as SmileNeutral,
+  BsFillEmojiSmileFill as SmileHappy,
 } from 'react-icons/bs';
 
 const SPACING_MULT = 4;
@@ -34,13 +34,13 @@ const myTheme = Object.freeze({
 
   icons: {
     feedback: {
-      bad: styled(BsFillEmojiAngryFill)`
+      bad: styled(SmileAngry)`
         color: ${({ color, theme }) => color || theme.color.feedback.bad};
       `,
-      neutral: styled(BsFillEmojiNeutralFill)`
+      neutral: styled(SmileNeutral)`
         color: ${({ color, theme }) => color || theme.color.feedback.neutral};
       `,
-      good: styled(BsFillEmojiSmileFill)`
+      good: styled(SmileHappy)`
         color: ${({ color, theme }) => color || theme.color.feedback.good};
       `,
     },
