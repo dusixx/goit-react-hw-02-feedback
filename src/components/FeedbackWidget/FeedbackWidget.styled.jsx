@@ -7,7 +7,7 @@ export const Container = styled.div`
   align-items: center;
 
   width: 300px;
-  padding: 20px;
+  padding: ${({ theme }) => theme.spacing(5)};
 
   color: gray;
   background-color: white;
@@ -16,8 +16,8 @@ export const Container = styled.div`
 `;
 
 export const Title = styled.h2`
-  padding-top: 2px;
-  margin-bottom: 25px;
+  padding-top: ${({ theme }) => theme.spacing()};
+  margin-bottom: ${({ theme }) => theme.spacing(6)};
   font-size: 20px;
   color: ${({ theme }) => theme.color.black};
 `;
@@ -29,8 +29,8 @@ export const Notification = styled.p`
 
   margin-top: auto;
   width: 100%;
-  height: 35px;
+  height: 36px;
 
-  border-radius: 5px;
+  border-radius: 7px;
   background-color: ${({ color }) => color};
 `;

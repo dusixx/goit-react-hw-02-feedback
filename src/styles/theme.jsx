@@ -9,11 +9,18 @@ import {
 const myTheme = {
   color: {
     black: 'rgb(41, 41, 41)',
+    background: 'rgb(235, 235, 235)',
     feedback: {
       bad: '#ff884f',
       neutral: '#3699ff',
       good: '#83b30e',
     },
+  },
+
+  spacingMult: 4,
+  spacing(n) {
+    if (!Number.isInteger(n)) n = 1;
+    return `${n * myTheme.spacingMult}px`;
   },
 
   transition(...props) {

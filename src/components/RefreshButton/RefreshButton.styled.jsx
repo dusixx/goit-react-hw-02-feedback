@@ -4,8 +4,8 @@ const DEF_SIZE = 20;
 
 export const Button = styled.button`
   position: absolute;
-  top: 7px;
-  right: 7px;
+  top: ${({ theme }) => theme.spacing(2)};
+  right: ${({ theme }) => theme.spacing(2)};
 
   display: flex;
   justify-content: center;

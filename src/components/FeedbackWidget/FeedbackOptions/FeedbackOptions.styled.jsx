@@ -5,7 +5,7 @@ export const OptionsList = styled.div`
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: ${({ theme }) => theme.spacing(5)};
 `;
 
 export const Option = styled.div`

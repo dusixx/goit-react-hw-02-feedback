@@ -1,28 +1,36 @@
-import './index.css';
+import './base.css';
 import myTheme from './theme';
 import { Global, css, ThemeProvider } from '@emotion/react';
 
 const resetCSS = css`
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
   p,
-  h2 {
-    padding: 0;
+  ul {
     margin: 0;
+  }
+
+  ul {
+    padding: 0;
+    list-style: none;
   }
 
   img {
     display: block;
-    width: 100%;
+    max-width: 100%;
     height: auto;
-  }
-
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
   }
 `;
 
 const globalStyles = css`
+  body {
+    background-color: ${myTheme.color.background};
+  }
+
   button {
     display: block;
     padding: 0;
