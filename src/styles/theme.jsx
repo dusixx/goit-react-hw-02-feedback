@@ -6,7 +6,9 @@ import {
   BsFillEmojiSmileFill,
 } from 'react-icons/bs';
 
-const myTheme = {
+const SPACING_MULT = 4;
+
+const myTheme = Object.freeze({
   color: {
     black: 'rgb(41, 41, 41)',
     background: 'rgb(235, 235, 235)',
@@ -17,10 +19,9 @@ const myTheme = {
     },
   },
 
-  spacingMult: 4,
   spacing(n) {
     if (!Number.isInteger(n)) n = 1;
-    return `${n * myTheme.spacingMult}px`;
+    return `${n * SPACING_MULT}px`;
   },
 
   transition(...props) {
@@ -44,6 +45,6 @@ const myTheme = {
       `,
     },
   },
-};
+});
 
 export default myTheme;

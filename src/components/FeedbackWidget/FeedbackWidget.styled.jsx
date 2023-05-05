@@ -18,6 +18,7 @@ export const Container = styled.div`
 export const Title = styled.h2`
   padding-top: ${({ theme }) => theme.spacing()};
   margin-bottom: ${({ theme }) => theme.spacing(6)};
+
   font-size: 20px;
   color: ${({ theme }) => theme.color.black};
 `;
