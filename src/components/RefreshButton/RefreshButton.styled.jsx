@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 
 const DEF_SIZE = 20;
 
+// лучше наследовать(?) styled.button(ButtonBase)`...`
 export const Button = styled.button`
   position: absolute;
   top: ${({ theme }) => theme.spacing(2)};

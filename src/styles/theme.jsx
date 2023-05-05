@@ -7,6 +7,8 @@ import {
 } from 'react-icons/bs';
 
 const SPACING_MULT = 4;
+const TRANSITION_FUNC = 'ease';
+const TRANSITION_DELAY = 250;
 
 const myTheme = Object.freeze({
   color: {
@@ -25,7 +27,9 @@ const myTheme = Object.freeze({
   },
 
   transition(...props) {
-    return props.map(prop => `${prop} ease 250ms`).join(',');
+    return props
+      .map(prop => `${prop} ${TRANSITION_FUNC} ${TRANSITION_DELAY}ms`)
+      .join(',');
   },
 
   shaddow: {
