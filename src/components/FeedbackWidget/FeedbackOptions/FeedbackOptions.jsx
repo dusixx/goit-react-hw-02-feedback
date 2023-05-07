@@ -12,7 +12,7 @@ import {
 // FeedbackOptions
 //
 
-const FeedbackOptions = ({ values, onClick, iconSize }) => (
+const FeedbackOptions = ({ values, onLeaveFeedback, iconSize }) => (
   <OptionsList>
     {Object.keys(values).map(type => (
       <FeedbackOptionsItem
@@ -20,7 +20,7 @@ const FeedbackOptions = ({ values, onClick, iconSize }) => (
         type={type}
         iconSize={iconSize}
         value={values[type]}
-        onClick={onClick}
+        onClick={onLeaveFeedback}
       />
     ))}
   </OptionsList>
