@@ -26,7 +26,7 @@ const resetCSS = css`
   }
 `;
 
-// or https://emotion.sh/docs/@emotion/css#global-styles
+// or injectGlobal https://emotion.sh/docs/@emotion/css#global-styles
 const globalStyles = css`
   body {
     background-color: ${myTheme.color.background};

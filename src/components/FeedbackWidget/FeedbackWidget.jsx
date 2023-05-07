@@ -34,7 +34,7 @@ export default class FeedbackWidget extends Component {
   };
 
   handleFeedbackLeave = (_, type) => {
-    this.setState({ [type]: this.state[type] + 1 });
+    this.setState(curState => ({ [type]: curState[type] + 1 }));
   };
 
   handleFormReset = () => {
@@ -54,7 +54,7 @@ export default class FeedbackWidget extends Component {
       <Section title={props.title}>
         <RefreshButton size={18} onClick={handleFormReset} />
         <FeedbackOptions values={{ ...state }} onClick={handleFeedbackLeave} />
-        <Stats value={countPositives()} />
+        <Statistics value={countPositives()} />
       </Section>
     );
   }
@@ -69,7 +69,7 @@ function Section({ title, children }) {
   );
 }
 
-function Stats({ value }) {
+function Statistics({ value }) {
   return value ? (
     <Notification color="#e0f4ff">
       {MSG_POSITIVE_FEEDBACK}
