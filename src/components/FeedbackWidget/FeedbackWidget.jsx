@@ -5,7 +5,6 @@ import FeedbackOptions from './FeedbackOptions';
 import { Container, Title, Notification } from './FeedbackWidget.styled';
 
 const MSG_NO_FEEDBACK = 'There is no feedback';
-const MSG_POSITIVE_FEEDBACK = <>Positive feedback:&nbsp;</>;
 
 //
 // FeedbackWidget
@@ -28,9 +27,10 @@ export default class FeedbackWidget extends Component {
     return Object.values(this.state).reduce((sum, v) => sum + v, 0);
   }
 
-  countPositives = () => {
-    const res = (this.state.good / this.totalFeedback) * 100;
-    return isNaN(res) ? null : res.toFixed(0);
+  getStats = () => {
+    const total = this.totalFeedback;
+    const res = (this.state.good / total) * 100;
+    return { total, positive: res.toFixed(0) };
   };
 
   handleFeedbackLeave = (_, type) => {
@@ -42,22 +42,16 @@ export default class FeedbackWidget extends Component {
   };
 
   render() {
-    const {
-      props,
-      state,
-      handleFeedbackLeave,
-      countPositives,
-      handleFormReset,
-    } = this;
+    const { handleFeedbackLeave, getStats, handleFormReset } = this;
 
     return (
-      <Section title={props.title}>
+      <Section title={this.props.title}>
         <RefreshButton size={18} onClick={handleFormReset} />
         <FeedbackOptions
-          values={{ ...state }}
+          values={{ ...this.state }}
           onLeaveFeedback={handleFeedbackLeave}
         />
-        <Statistics value={countPositives()} />
+        <Stats {...getStats()} />
       </Section>
     );
   }
@@ -72,11 +66,15 @@ function Section({ title, children }) {
   );
 }
 
-function Statistics({ value }) {
-  return value ? (
+function Stats({ total, positive }) {
+  return total ? (
     <Notification color="#e0f4ff">
-      {MSG_POSITIVE_FEEDBACK}
-      <b>{value}%</b>
+      <span>
+        Total:&nbsp;<b>{total}</b>
+      </span>
+      <span>
+        Positive:&nbsp;<b>{positive}%</b>
+      </span>
     </Notification>
   ) : (
     <Notification color="#ffe6d9">{MSG_NO_FEEDBACK}</Notification>
