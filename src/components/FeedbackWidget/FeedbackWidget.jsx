@@ -29,8 +29,8 @@ export default class FeedbackWidget extends Component {
 
   getStats = () => {
     const total = this.totalFeedback;
-    const res = (this.state.good / total) * 100;
-    return { total, positive: res.toFixed(0) };
+    const positive = ((this.state.good / total) * 100).toFixed(0);
+    return { total, positive };
   };
 
   handleFeedbackLeave = (_, type) => {

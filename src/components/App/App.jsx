@@ -5,8 +5,6 @@ import React from 'react';
 
 export const App = () => (
   <Container>
-    <Task title="01 - Feedback widget">
-      <FeedbackWidget title="Please leave feedback" />
-    </Task>
+    <FeedbackWidget title="Please leave feedback" />
   </Container>
 );

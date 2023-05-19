@@ -28,9 +28,9 @@ const resetCSS = css`
 
 // or injectGlobal https://emotion.sh/docs/@emotion/css#global-styles
 const globalStyles = css`
-  body {
+  /* body {
     background-color: ${myTheme.color.background};
-  }
+  } */
 
   button {
     display: block;

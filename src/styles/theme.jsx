@@ -33,7 +33,7 @@ const myTheme = Object.freeze({
   },
 
   shaddow: {
-    box: '0 2px 5px 2px lightgray, 0 10px 10px -5px lightgray',
+    box: '0 1px 1px 1px rgb(202, 202, 202)',
   },
 
   icons: {
