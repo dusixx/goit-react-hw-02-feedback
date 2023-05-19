@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import myTheme from 'styles/theme';
+import { cap } from 'components/utils';
 
 import {
   OptionsList,
@@ -46,7 +47,7 @@ function FeedbackOptionsItem({ onClick, type, value = 0, iconSize = 40 }) {
 
   return (
     <Option>
-      <OptionButton onClick={e => onClick(e, type)} title={type}>
+      <OptionButton onClick={e => onClick(e, type)} title={cap(type)}>
         <Icon size={iconSize} />
       </OptionButton>
       <Label>{value}</Label>

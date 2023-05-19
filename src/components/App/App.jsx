@@ -1,4 +1,3 @@
-import Task from '../Task/Task';
 import { Container } from './App.styled';
 import FeedbackWidget from 'components/FeedbackWidget';
 import React from 'react';
